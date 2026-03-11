@@ -7,11 +7,11 @@ import net.runelite.client.config.Keybind;
 
 import java.awt.event.KeyEvent;
 
-@ConfigGroup(FairyRingQOLConfig.GROUP)
-public interface FairyRingQOLConfig extends Config
+@ConfigGroup(FairyRingQolConfig.GROUP)
+public interface FairyRingQolConfig extends Config
 {
 
-    String GROUP = "betterfairyrings";
+    String GROUP = "fairyringqol";
 
     @ConfigItem(
         keyName = "selectKeyBind",

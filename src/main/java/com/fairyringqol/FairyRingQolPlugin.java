@@ -32,10 +32,10 @@ import java.util.Objects;
     description = "Improved fairy ring code selection",
     tags = { "fairy ring", "search", "hotkey" }
 )
-public class FairyRingQOLPlugin extends Plugin
+public class FairyRingQolPlugin extends Plugin
 {
 
-    @Inject private FairyRingQOLConfig config;
+    @Inject private FairyRingQolConfig config;
     @Inject private Client client;
     @Inject private ClientThread clientThread;
     @Inject private KeyManager keyManager = null;
@@ -105,7 +105,7 @@ public class FairyRingQOLPlugin extends Plugin
                     for (Widget child : children) {
                         // "HaListener" and "SpriteId" seem to be the only way to distinguish the clickable fairy ring rows from everything else in the container
                         // hasListener is true for both the row and the "fave" buttons, but the "fave" buttons have a spriteId while the rows do not
-                        // TODO: there might be a better way to identify these rows? it needs to be consistent between CONTENTS and FAVES containers
+                        // there might be a better way to identify these rows? it needs to be consistent between CONTENTS and FAVES containers
                         if (child != null && !child.isHidden() && child.hasListener() && child.getSpriteId() == -1) return child;
                     }
                 }
@@ -194,7 +194,7 @@ public class FairyRingQOLPlugin extends Plugin
 
     @Subscribe
     void onConfigChanged(ConfigChanged event) {
-        if (!FairyRingQOLConfig.GROUP.equals(event.getGroup())) return;
+        if (!FairyRingQolConfig.GROUP.equals(event.getGroup())) return;
 
         boolean wasEnabled = isEnabled;
         toggle(false);
@@ -204,8 +204,8 @@ public class FairyRingQOLPlugin extends Plugin
 
 
     @Provides
-    FairyRingQOLConfig provideConfig(ConfigManager configManager) {
-        return configManager.getConfig(FairyRingQOLConfig.class);
+    FairyRingQolConfig provideConfig(ConfigManager configManager) {
+        return configManager.getConfig(FairyRingQolConfig.class);
     }
 
     private String getClipboardText() {
